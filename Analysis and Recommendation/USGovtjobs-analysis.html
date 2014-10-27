@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <style>
+    p1 {color:#1d9e74;font-family: Consolas ;font-size: 3em;}
+    p {font-family: Calibri ;font-size: 20;padding-left: 150px;padding-right: 120px;}
+    p2 {font-family: Calibri ;font-size: 25;padding-left: 150px;padding-right: 120px;}
+    </style>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["geochart"]});
+      google.setOnLoadCallback(drawMap);
+
+
+      function drawMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['State', 'Number of Jobs'],
+          [' South Carolina',14],
+[' Oklahoma',41],
+[' Indiana',14],
+[' Wyoming',63],
+[' Connecticut',2],
+[' Alaska',30],
+[' North Dakota',19],
+[' Nebraska',15],
+[' Mississippi',19],
+[' Florida',41],
+[' New Mexico',54],
+[' Nevada',20],
+[' Puerto Rico',3],
+[' Washington',54],
+[' Germany',9],
+[' Kansas',23],
+[' Ohio',35],
+[' Michigan',26],
+[' Arlington',2],
+[' Hawaii',5],
+[' Utah',25],
+[' Arizona',98],
+[' United States',19],
+[' Louisiana',16],
+[' California',88],
+[' Vermont',5],
+[' Massachusetts',29],
+[' Idaho',10],
+[' South Dakota',53],
+[' Wisconsin',15],
+[' South Korea',5],
+[' Pennsylvania',36],
+[' Missouri',35],
+[' Guam',4],
+[' Maryland',127],
+[' Illinois',38],
+[' Belgium',3],
+[' North Carolina',22],
+[' Rhode Island',5],
+[' Montana',34],
+[' Minnesota',33],
+[' Georgia',51],
+[' Maine',5],
+[' Kentucky',23],
+[' District of Columbia',380],
+[' Tennessee',20],
+[' Iowa',7],
+[' Texas',75],
+[' Japan',7],
+[' New Jersey',18],
+[' New York',41],
+[' Virgin Islands',2],
+[' Oregon',31],
+[' Mechanicsburg',1],
+[' Arkansas',8],
+[' United Kingdom',2],
+[' West Virginia',13],
+[' Delaware',2],
+[' Colorado',62],
+[' Virginia',123],
+[' New Hampshire',6],
+[' Portsmouth',1],
+[' Alabama',15],
+[' El Salvador',1]
+        ]);
+
+        var options = {
+        };
+        options['region'] = 'US';
+        options['resolution'] = 'provinces';
+
+
+        var container = document.getElementById('regions_div');
+        var geomap = new google.visualization.GeoChart(container);
+
+        geomap.draw(data, options);
+      };
+    </script>
+
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Department', 'Full Time', 'Part Time', 'Other'],
+          ['National Foundation on the Arts and the Humanities',4,0,0],
+['Department Of Energy',55,1,2],
+['Non-Federal Civilian Customers',2,0,0],
+['Department of the Navy',41,0,0],
+['National Aeronautics and Space Administration',15,2,21],
+['Department Of Transportation',100,2,1],
+['Other Agencies and Independent Organizations',214,49,43],
+['Department Of Justice',150,1,16],
+['Department Of The Interior',267,8,13],
+['Department of Defense',20,0,2],
+['Department of the Air Force',92,0,0],
+['Department Of Homeland Security',239,50,0],
+['Department Of Labor',74,2,0],
+['General Services Administration',29,0,0],
+['Department of the Army',112,17,17],
+['Department Of Veterans Affairs',241,22,4],
+['Department Of Health And Human Services',270,5,140],
+['Department Of The Treasury',22,12,31],
+['Department Of State',18,0,0],
+['Legislative Branch',28,0,17],
+['Department Of Housing And Urban Development',1,0,16],
+['Judicial Branch',27,9,0],
+['Department Of Commerce',23,11,1],
+['Department Of Education',10,0,0]
+        ]);
+
+        var options = {
+          title: 'Number of jobs per Department based on type of roles',
+        width: 1000,
+        height: 1000,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+        isStacked: true
+      };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Department', 'Full Time', 'Part Time', 'Other'],
+          ['Department Of Agriculture',9102,1132,4]
+        ]);
+
+        var options = {
+          title: 'Number of jobs in Dept of Agriculture based on roles',
+        legend: { position: 'none', maxLines: 3 },
+        bar: { groupWidth: '80%' },
+        isStacked: true
+      };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Length of Opening', 'Number of jobs'],
+          ['Very New (1-5 days)',     1047],
+          ['New (6-24 days)',      1593],
+          ['Old (25-60 days)',  611],
+          ['Very Old (>60 days)', 9559]
+        ]);
+
+        var options = {
+          title: 'Number of jobs based on length of openings',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Department', 'Very New', 'New', 'Old', 'Very Old'],
+    ['National Foundation on the Arts and the Humanities',3,0,0,1],
+['Department Of Energy',17,27,9,5],
+['Non-Federal Civilian Customers',0,2,0,0],
+['Department of the Navy',36,2,0,3],
+['National Aeronautics and Space Administration',8,7,0,23],
+['Department Of Transportation',55,27,2,18],
+['Other Agencies and Independent Organizations',75,126,28,77],
+['Department Of Justice',50,39,2,76],
+['Department Of The Interior',83,147,6,55],
+['Department of Defense',21,0,0,1],
+['Department of the Air Force',57,1,0,34],
+['Department Of Homeland Security',62,62,8,157],
+['Department Of Labor',14,8,3,51],
+['General Services Administration',6,6,0,17],
+['Department of the Army',119,18,1,8],
+['Department Of Veterans Affairs',225,20,2,20],
+['Department Of Health And Human Services',73,218,24,100],
+['Department Of The Treasury',19,34,10,2],
+['Department Of State',7,9,1,1],
+['Legislative Branch',9,22,7,8],
+['Department Of Housing And Urban Development',3,13,0,1],
+
+['Judicial Branch',4,21,6,5],
+['Department Of Commerce',15,5,0,15],
+['Department Of Education',2,3,0,5]
+  ]);
+
+  
+  var options = {
+    title: 'Number of jobs per Department based on length of openings',
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '80%' },
+        isStacked: true
+      };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+
+  chart.draw(data, options);
+
+}
+    </script>
+  </head>
+  <body>
+    <center>
+      <div>
+        <p1>Data Analysis - US Government jobs</p1>
+      </div></center>
+      <br><br>
+      <p2>Introduction:</p2>
+      <p>The US government has a number of job openings posted on its webiste. This is an effort to analyse the jobs available based on departments, geographies, roles and how long jobs have been open for. The dataset for this project was taken from <a href="https://data.usajobs.gov/Rest">USA JOBS</a>.</p>
+      <p2>Analysis:</p2>
+    <p>From the Geo chart below, we can see that the states with most number of US govt job openings are Maryland and Virginia. A hypothesis for this could be the fact that many agencies and departments are center around the captial of the country - DC</p>
+    <center><div id="regions_div" style="width: 900px; height: 500px;"></div></center>
+    <br><br><p>If we categorize the jobs based on how long they have been open for, we can see that almost 75% have been open for a long time (i.e, more than 60 days). The two 'New' categories combine to form only 20% of the total jobs.</p>
+    <center><div id="donutchart" style="width: 900px; height: 500px;"></div></center>
+    <p>Categorizing the same by departments, we see that most of the old jobs stem from the Department of Homeland Security. One possible reason could be that the agency employs extensive recruiting procedures to make sure their employees can work with very sensitive data. Another story the chart tells is that the proportion of "old jobs" is high in Department of Labor as well.</p>
+    <center><div id="columnchart" style="width: 900px; height: 500px;"></div></center>
+    <br><br><p>The following two charts categorizes the number of jobs in each department based on type of role (i.e. Full time, Part Time or Other). Department of Agriculture has the most number of jobs and almost 90% of them are Full time roles. And from the second chart, we can see that the only departments with a significant number of part time roles are Dept. of Homeland Security and Other Agencies and Independent Organizations. It is also interesting to note that a good proportion of listing in Dept. of Health and Human Services are classified as "Other" as the work type in the listing didn't have words that were highly indicative of them falling in the other two categories.</p>
+    <center><div id="chart_div2" style="width: 500px; height: 100px;"></div></center>
+    <center><div id="chart_div" style="width: 900px; height: 500px;"></div></center>
+    
+  </body>
+</html>
